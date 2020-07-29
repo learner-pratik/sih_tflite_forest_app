@@ -17,12 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AlertMap"></activity>
+        <activity android:name=".ActionTakenActivity"></activity>
         <activity android:name=".Prediction" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LocationActivity" />
         <activity android:name=".TaskActivity" />
         <activity android:name=".MapActivity" />
         <activity android:name=".HomeActivity" />
+        <activity android:name=".ObservationActivity" />
         <activity android:name=".AlertActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".DetectorActivity"

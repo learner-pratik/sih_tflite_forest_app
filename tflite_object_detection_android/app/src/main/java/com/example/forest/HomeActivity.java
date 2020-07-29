@@ -27,6 +27,7 @@ import java.util.Map;
 public class HomeActivity extends AppCompatActivity {
     //Button btnMap,btnPrediction,btnTask;
     private static final String TAG = "HomeActivity";
+    public static String encodedImage,description="";
 
     public static boolean mqttflag = false;
 
@@ -37,8 +38,8 @@ public class HomeActivity extends AppCompatActivity {
     public static Map<String, List<String>> animal_info = new HashMap<>();
     public static Map<String, List<String>> animal_location_info = new HashMap<>();
 
-    LinearLayout cvMap,cvPrediction,cvTask,cvAlert;
-    Button cvAnimal;
+    LinearLayout cvMap,cvPrediction,cvTask,cvAlert,cvObservation;
+//    Button cvAnimal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +57,8 @@ public class HomeActivity extends AppCompatActivity {
         cvPrediction=findViewById(R.id.cvPrediction);
         cvTask=findViewById(R.id.cvTask);
         cvAlert=findViewById(R.id.cvAlert);
-        cvAnimal=findViewById(R.id.cvAnimal);
+        cvObservation=findViewById(R.id.cvObservation);
+//        cvAnimal=findViewById(R.id.cvAnimal);
 
         if (hasPermission()) {
             getCurrentLocation();
@@ -97,13 +99,21 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        cvAnimal.setOnClickListener(new View.OnClickListener() {
+        cvObservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent a = new Intent(HomeActivity.this, DetectorActivity.class);
+                Intent a = new Intent(HomeActivity.this,ObservationActivity.class);
                 startActivity(a);
             }
         });
+
+//        cvAnimal.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent a = new Intent(HomeActivity.this, DetectorActivity.class);
+//                startActivity(a);
+//            }
+//        });
 
     }
 
